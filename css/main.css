@@ -1,20 +1,43 @@
 header{
     background-color: rgba(0,0,0, 0.7);
-    display:flex;
-    align-items: center;
+    
 }
 
-.menu{
-    display:flex;   
+header .menu{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100vw; 
+}
+
+.menu .logo{
+    flex-grow: 0;
+}
+.menu .categoria{
+    flex-grow: 2;
+}
+
+.menu .categoria ul{
+    display:flex; 
+    justify-content: space-around; 
 }
 
 .menu .categoria li a{
     text-decoration: none;
 }
 
-.menu ul{
-    display:flex;
+.menu .icon{
+    flex-grow: 1;
 }
 
+.menu .icon ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu a{
+    color: white;
+    font-size: 2rem;
+}
 
 
