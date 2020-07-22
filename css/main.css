@@ -1,0 +1,20 @@
+header{
+    background-color: rgba(0,0,0, 0.7);
+    display:flex;
+    align-items: center;
+}
+
+.menu{
+    display:flex;   
+}
+
+.menu .categoria li a{
+    text-decoration: none;
+}
+
+.menu ul{
+    display:flex;
+}
+
+
+
