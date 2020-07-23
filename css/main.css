@@ -32,6 +32,11 @@ header .menu a{
     font-size:3rem;
     font-family: 'Marck Script', cursive;
     font-weight: 600;
+    transition: 0.5s;
+}
+
+.menu .categoria ul li a:hover{
+    color:#FCDF17;
 }
 
 .menu .icon{
@@ -47,8 +52,21 @@ header .menu a{
     margin-left: 1rem;
 }
 
-.menu .icon a{
+.menu .icon ul li a{
     font-size: 2rem;
+}
+
+
+.menu .icon ul li a .fa-facebook-square:hover{
+    color:#21267A;
+}
+
+.menu .icon ul li a .fa-instagram:hover{
+    color:#E6267A;
+}
+
+.menu .icon ul li a .fa-youtube:hover{
+    color:#C40001;
 }
 
 
