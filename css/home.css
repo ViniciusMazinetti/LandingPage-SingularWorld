@@ -4,4 +4,13 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message{
+    color:white;
+    font-family: 'Special Elite', cursive;
+    font-size: 4rem;
 }
