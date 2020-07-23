@@ -14,7 +14,7 @@ header .menu{
     flex-grow: 0;
 }
 .menu .categoria{
-    flex-grow: 2;
+    flex-grow: 4;
 }
 
 .menu .categoria ul{
@@ -32,7 +32,11 @@ header .menu{
 
 .menu .icon ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.menu .icon ul li{
+    margin-left: 1rem;
 }
 
 .menu a{
