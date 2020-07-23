@@ -10,9 +10,14 @@ header .menu{
     width:100vw; 
 }
 
+header .menu a{
+    color: white;
+}
+
 .menu .logo{
     flex-grow: 0;
 }
+
 .menu .categoria{
     flex-grow: 4;
 }
@@ -24,6 +29,9 @@ header .menu{
 
 .menu .categoria li a{
     text-decoration: none;
+    font-size:3rem;
+    font-family: 'Marck Script', cursive;
+    font-weight: 600;
 }
 
 .menu .icon{
@@ -39,9 +47,10 @@ header .menu{
     margin-left: 1rem;
 }
 
-.menu a{
-    color: white;
+.menu .icon a{
     font-size: 2rem;
 }
+
+
 
 
