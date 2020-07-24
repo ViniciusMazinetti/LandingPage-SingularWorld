@@ -39,4 +39,14 @@ function typpingText(){
 
 }
 
+
+const mountain = document.querySelector(".montanha");
+
+()=>{
+    var value = 905 + window.scrollY;
+
+    mountain.style.top = value + 'px'
+});
+
+
 typpingText();
