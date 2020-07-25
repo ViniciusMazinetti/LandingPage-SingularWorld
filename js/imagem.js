@@ -1,24 +1,30 @@
-function slider(){
-    const imagens = ['img/img02-tokyo.jpg','img/img03-london.jpg','img/img04-paris.jpg','img/img05-dublin.jpg'];
-    const cidades = ["Tokyo","London","Paris","Dublin"];
-    const paises = ["Japan","England","France","Ireland"];
+const slides = document.querySelector("#imagem").children;
+let index = 0;
 
-    let imagem = document.querySelector('#imagem');
-    let cidade = document.querySelector('.cidade');
-    let pais = document.querySelector('.pais');
-    let index = 0;
+//Function that put the "active" class in order to show the slide
+function changeSlide(index){
+    slides[index].classList.add("active");
+}
 
+//Function that remove the "active" class in order to remove the slide
+function removeSlide(){
+    for(let i = 0;i<slides.length;i++){
+        slides[i].classList.remove("active");
+    };
+}
+
+//Function that change slides automatically
+function autoSlider(){
     setInterval(()=>{
-        
-        if(index<imagens.length){
-            imagem.style.backgroundImage = `url(${imagens[index]})`;
-            cidade.innerHTML = cidades[index];
-            pais.innerHTML = paises[index];
-            index++;
-        }else{
+        if(index==slides.length-1){
             index=0;
-        } 
-    },5000);
-};
+        }else{
+            index++;
+        }
+        removeSlide();
+        changeSlide(index);
 
-slider();
+    },6000);
+}
+
+autoSlider();

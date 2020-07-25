@@ -1,22 +1,70 @@
 main #imagem{
-    height: 100vh;
-    width: 100vw;
-    
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-main #imagem .cidade{
-    color: white;
-    font-size: 6rem;
+main #imagem .slide{
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    
+     
 }
 
-main #imagem .pais{
+@keyframes aparece{
+    0%{
+        transform:scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+main #imagem .slide.active{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    animation: aparece 2s ease;
+}
+
+main #imagem .slide .texto{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+main #imagem .slide.active .cidade{
+    font-family: 'Special Elite', cursive;
+    color:white;
+    font-size: 6rem;
+    font-weight: 600;
+    animation: textEffect 5s;
+}
+
+main #imagem .slide.active .pais{
+    font-family: 'Special Elite', cursive;
     color:white;
     font-size: 3rem;
+    opacity: 0;
+    animation: textEffect 5s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes textEffect{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
