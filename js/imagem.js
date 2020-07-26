@@ -1,4 +1,6 @@
 const slides = document.querySelector("#imagem").children;
+const prev = document.querySelectorAll(".prev");
+const next = document.querySelectorAll(".next");
 let index = 0;
 
 //Function that put the "active" class in order to show the slide
@@ -23,8 +25,9 @@ function autoSlider(){
         }
         removeSlide();
         changeSlide(index);
-
+        
     },6000);
 }
 
 autoSlider();
+

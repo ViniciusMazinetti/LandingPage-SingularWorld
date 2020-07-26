@@ -14,8 +14,17 @@ main #imagem .slide{
     background-repeat: no-repeat;
     background-position: center;
     display: none;
-    
-     
+       
+}
+
+main #imagem .slide.active{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main #imagem .slide.active .text{
+    animation: aparece 2s ease;
 }
 
 @keyframes aparece{
@@ -25,13 +34,6 @@ main #imagem .slide{
     100%{
         transform: scale(1);
     }
-}
-
-main #imagem .slide.active{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    animation: aparece 2s ease;
 }
 
 main #imagem .slide .texto{
@@ -68,3 +70,22 @@ main #imagem .slide.active .pais{
         opacity: 1;
     }
 }
+
+main #imagem .slide.active .controlers{
+    font-size: 3rem;
+    color:white;
+    padding: 10px;
+    transition: 1s;
+}
+
+main #imagem .slide.active .controlers:hover{
+    background-color:white;
+    color:black;
+    cursor: pointer;
+}
+
+
+
+
+
+
