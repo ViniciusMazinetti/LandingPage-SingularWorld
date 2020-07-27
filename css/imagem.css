@@ -92,6 +92,40 @@ main #imagem .next:hover{
     cursor: pointer;
 }
 
+main #imagem .indicator{
+    position: absolute;
+    top:220%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+main #imagem .indicator div{
+    background-color: white;
+    color: black;
+    display: inline-block;
+    border-radius: 50px;
+    margin:0 3px;
+    text-align: center;
+    line-height: 1.3rem;
+    width:1rem;
+    height: 1rem;
+    font-size: 1rem;
+    font-family: 'Special Elite', cursive;
+    transition: 0.5s;
+      
+}
+
+main #imagem .indicator div .active{
+    background-color: black;
+    color: white;
+}
+
+main #imagem .indicator div:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
 
 
 

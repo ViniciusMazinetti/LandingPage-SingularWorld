@@ -1,6 +1,7 @@
 const slides = document.querySelector(".slider").children;
 const prev = document.querySelectorAll(".prev");
 const next = document.querySelectorAll(".next");
+const indicator = document.querySelector(".indicator");
 let index = 0;
 
 //Function that put the "active" class in order to show the slide
@@ -29,5 +30,14 @@ function autoSlider(){
     },6000);
 }
 
+function indicatorBalls(){
+    for(let i = 0; i<slides.length;i++){
+        const div = document.createElement("div");
+        div.innerHTML = i;
+        indicator.appendChild(div);
+    }
+}
+
 autoSlider();
+indicatorBalls();
 
