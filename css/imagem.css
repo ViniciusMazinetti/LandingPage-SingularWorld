@@ -115,7 +115,7 @@ main #imagem .indicator div{
       
 }
 
-main #imagem .indicator div .active{
+main #imagem .indicator .active{
     background-color: black;
     color: white;
 }
