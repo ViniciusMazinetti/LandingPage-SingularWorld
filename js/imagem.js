@@ -1,6 +1,6 @@
 const slides = document.querySelector(".slider").children;
-const prev = document.querySelectorAll(".prev");
-const next = document.querySelectorAll(".next");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
 const indicator = document.querySelector(".indicator");
 const indicatorActive = indicator.children;
 let index = 0;
@@ -35,7 +35,6 @@ function updateIndicator(index){
 
 //Function that change slides automatically
 function autoSlider(){
-    setInterval(()=>{
         if(index==slides.length-1){
             index=0;
         }else{
@@ -44,10 +43,42 @@ function autoSlider(){
         removeSlide();
         changeSlide(index);
         updateIndicator(index);
-        
-    },6000);
 }
 
-autoSlider();
+function waitControlers(){
+    prev.addEventListener("click",prevSlide);
+    next.addEventListener("click",nextSlide);
+    
+}
+
+function prevSlide(){
+    index = index-1;
+    if(index<0){
+        index = slides.length - 1;
+    };
+    removeSlide();
+    changeSlide(index);
+    updateIndicator(index);
+    resetTimer();
+}
+
+function nextSlide(){
+    index = index+1;
+    if (index>=slides.length){
+        index=0;
+    };
+    removeSlide();
+    changeSlide(index);
+    updateIndicator(index);
+    resetTimer();
+}
+
+function resetTimer(){
+    clearInterval(timer);
+    timer = setInterval(autoSlider,6000);
+}
+
+let timer = setInterval(autoSlider,6000);
 indicatorBalls();
+waitControlers();
 
