@@ -1,4 +1,4 @@
-const slides = document.querySelector("#imagem").children;
+const slides = document.querySelector(".slider").children;
 const prev = document.querySelectorAll(".prev");
 const next = document.querySelectorAll(".next");
 let index = 0;

@@ -1,13 +1,13 @@
-main #imagem{
-    overflow-y: hidden;
+main #imagem .slider{
     overflow-x: hidden;
+    overflow-y: hidden;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
-main #imagem .slide{
+main #imagem .slider .slide{
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -19,7 +19,7 @@ main #imagem .slide{
 
 main #imagem .slide.active{
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     animation: aparece 2s ease;
 }
@@ -69,18 +69,30 @@ main #imagem .slide.active .pais{
     }
 }
 
-main #imagem .slide.active .controlers{
+
+main #imagem .prev,
+main #imagem .next{
+    position: absolute;
+    top: 172%;
+    z-index: 2;
     font-size: 3rem;
     color:white;
     padding: 10px;
-    transition: 1s;
+    transition: 1s;  
 }
 
-main #imagem .slide.active .controlers:hover{
+main #imagem .next{
+    right:0%;
+}
+
+main #imagem .prev:hover,
+main #imagem .next:hover{
     background-color:white;
     color:black;
     cursor: pointer;
 }
+
+
 
 
 
