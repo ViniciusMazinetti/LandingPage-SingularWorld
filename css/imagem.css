@@ -21,11 +21,9 @@ main #imagem .slide.active{
     display:flex;
     justify-content: space-between;
     align-items: center;
-}
-
-main #imagem .slide.active .text{
     animation: aparece 2s ease;
 }
+
 
 @keyframes aparece{
     0%{
