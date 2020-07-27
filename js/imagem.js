@@ -18,13 +18,23 @@ function removeSlide(){
     };
 }
 
+function waitIndicator(element){
+    index = element.id;
+    removeSlide();
+    changeSlide(index);
+    updateIndicator(index);
+    resetTimer();
+}
+
 function indicatorBalls(){
     for(let i = 0; i<slides.length;i++){
         const div = document.createElement("div");
+        div.setAttribute("onclick","waitIndicator(this)");
         if(i==0){
             div.classList.add("active");
         }
         div.innerHTML = i;
+        div.id = i;
         indicator.appendChild(div);
     }
 }
