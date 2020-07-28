@@ -5,8 +5,36 @@ main #mapa{
     height: 100vh;
 }
 
-main #mapa svg{
+main #mapa .button{
+    position: absolute;
+    top:230%;  
+}
+
+main #mapa #zoomOut,
+main #mapa #zoomIn{
+    display:block;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    margin: 0.5rem 1rem;
+}
+
+main #mapa .paises{
     width: 100vw;
     height: 100vh;
     background-color: lightblue;
+    stroke-linejoin: round;
+    stroke:#000;
+    fill: none;
+}
+
+main #mapa .paises path{
+    fill:#f2f2f2;
+    fill-rule:evenodd;
+}
+
+main #mapa .paises .pais:hover{
+    cursor: pointer;
+    fill:black;
+
 }
