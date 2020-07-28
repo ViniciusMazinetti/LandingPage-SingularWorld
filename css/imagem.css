@@ -94,7 +94,7 @@ main #imagem .next:hover{
 
 main #imagem .indicator{
     position: absolute;
-    top:220%;
+    top:218%;
     left: 50%;
     transform: translateX(-50%);
     

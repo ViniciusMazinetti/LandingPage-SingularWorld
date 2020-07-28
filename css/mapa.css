@@ -1,0 +1,12 @@
+main #mapa{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+main #mapa svg{
+    width: 100vw;
+    height: 100vh;
+    background-color: lightblue;
+}
