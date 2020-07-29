@@ -41,5 +41,8 @@ main #mapa .paises path{
 main #mapa .paises .pais:hover{
     cursor: pointer;
     fill:black;
+}
 
+main #mapa .paises .pais.active{
+    fill: green;
 }

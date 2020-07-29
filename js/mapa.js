@@ -9,6 +9,7 @@ let walkX = 0;
 let walkY = 0;
 let PrevWalkX = 0;
 let PrevWalkY = 0;
+let totalCountryVisited = 0;
 
 
 
@@ -86,7 +87,6 @@ function waitPan(){
         svg.classList.add("move");
         startX = e.layerX;
         startY = e.layerY;
-        console.log(svg.getAttribute("viewBox"));
 
 
     });
@@ -101,8 +101,6 @@ function waitPan(){
     svg.addEventListener("mouseup",()=>{
         isDown = false;
         svg.classList.remove("move");
-        console.log(walkX);
-        console.log(walkY);
         PrevWalkX += (-1)*walkX;
         PrevWalkY += (-1)*walkY;
 
@@ -120,6 +118,27 @@ function waitPan(){
     });
 }
 
+function clickCountry(){
+    for(let i = 0;i<svg.children.length;i++){
+        svg.children[i].addEventListener("click",()=>{
+            svg.children[i].classList.toggle("active");
+            countCountry();
+        });
+    }
+}
+
+function countCountry(){
+    totalCountryVisited = 0;
+    for(let i=0;i<svg.children.length;i++){
+        if(svg.children[i].classList == "pais active"){
+            totalCountryVisited++;
+        }
+    }
+    console.log(totalCountryVisited);
+}
+
 waitZoom();
 addLabel();
 waitPan();
+clickCountry();
+
