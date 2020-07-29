@@ -1,6 +1,6 @@
 main #mapa{
-    overflow-x: hidden;
     overflow-y: hidden;
+    overflow-x: hidden;
     width: 100vw;
     height: 100vh;
 }
@@ -26,6 +26,11 @@ main #mapa .paises{
     stroke-linejoin: round;
     stroke:#000;
     fill: none;
+    object-fit: cover;
+}
+
+main #mapa .paises.move{
+    cursor: grabbing;
 }
 
 main #mapa .paises path{

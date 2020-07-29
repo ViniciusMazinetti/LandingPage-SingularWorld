@@ -1,18 +1,27 @@
-const country = document.querySelector(".paises").children
+const svg = document.querySelector(".paises");
+const inButton = document.querySelector("#zoomIn");
+const outButton = document.querySelector("#zoomOut");
 
-function createA (){
+let size = 100;
+let isDown = false;
+let startX;
+let startY;
+let walkX;
+let walkY;
+
+
+
+function addLabel (){
     
-    for(let i = 0; i < country.length; i++){
-        let name = country[i].getAttribute('data-name');
+    for(let i = 0; i < svg.children.length; i++){
+        let name = svg.children[i].getAttribute('data-name');
         const a = document.createElement("a");
-        country[i].classList.add('pais');
-        country[i].innerHTML = '<title>'+name+'</title';
+        svg.children[i].classList.add('pais');
+        svg.children[i].innerHTML = '<title>'+name+'</title';
     }
 }
 
-const inButton = document.querySelector("#zoomIn");
-const outButton = document.querySelector("#zoomOut");
-const map = document.querySelector(".paises");
+
 let num = 100;
 let cIn = 1;
 let cOut = 1;
@@ -23,8 +32,8 @@ function zoomIn(){
     if (num >= 300) {
         num = 300;
     }else{
-        map.style.width = num + '%';
-        map.style.height = num + '%';
+        svg.style.width = num + '%';
+        svg.style.height = num + '%';
     }
     if (cIn <= 10){
         requestId = requestAnimationFrame(zoomIn);
@@ -40,9 +49,10 @@ function zoomOut(){
         if (num <= 100) {
             num = 100;
             cancelAnimationFrame(requestId);
+            svg.setAttribute("viewBox",`0,0,2000,1001`);
         }else{
-            map.style.width = num + '%';
-            map.style.height = num + '%';
+            svg.style.width = num + '%';
+            svg.style.height = num + '%';
         }
         if (cOut <= 10){
             requestId = requestAnimationFrame(zoomOut);
@@ -62,6 +72,43 @@ function waitZoom(){
     })
 }
 
-waitZoom();
-createA();
+function waitPan(){
+    svg.addEventListener("mousedown",(e)=>{
+        isDown = true;
+        svg.classList.add("move");
+        startX = e.layerX;
+        startY = e.layerY;
 
+
+    });
+
+    svg.addEventListener("mouseleave",()=>{
+        isDown = false;
+        svg.classList.remove("move");
+        
+
+    });
+
+    svg.addEventListener("mouseup",()=>{
+        isDown = false;
+        svg.classList.remove("move");
+
+    });
+
+    svg.addEventListener("mousemove",(e)=>{
+        if(!isDown) return; //stop the fn from running
+        e.preventDefault();
+        console.log(svg.getAttribute("viewBox"));
+        const x =  e.layerX;
+        const y = e.layerY;
+        walkX = x - startX;
+        walkY = y - startY;
+        svg.setAttribute("viewBox",`${(-1)*walkX},${(-1)*walkY},2000,1001`);
+
+
+    });
+}
+
+waitZoom();
+addLabel();
+waitPan();
