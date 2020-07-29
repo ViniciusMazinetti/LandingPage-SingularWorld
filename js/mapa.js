@@ -5,13 +5,13 @@ function createA (){
     for(let i = 0; i < country.length; i++){
         let name = country[i].getAttribute('data-name');
         const a = document.createElement("a");
-        country[i].classList.add('active');
+        country[i].classList.add('pais');
         country[i].innerHTML = '<title>'+name+'</title';
     }
 }
 
-const inButton = document.querySelector(".upButton");
-const outButton = document.querySelector(".downButton");
+const inButton = document.querySelector("#zoomIn");
+const outButton = document.querySelector("#zoomOut");
 const map = document.querySelector(".paises");
 let num = 100;
 let cIn = 1;
