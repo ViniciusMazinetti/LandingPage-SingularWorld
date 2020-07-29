@@ -2,12 +2,13 @@ const svg = document.querySelector(".paises");
 const inButton = document.querySelector("#zoomIn");
 const outButton = document.querySelector("#zoomOut");
 
-let size = 100;
 let isDown = false;
 let startX;
 let startY;
-let walkX;
-let walkY;
+let walkX = 0;
+let walkY = 0;
+let PrevWalkX = 0;
+let PrevWalkY = 0;
 
 
 
@@ -50,6 +51,8 @@ function zoomOut(){
             num = 100;
             cancelAnimationFrame(requestId);
             svg.setAttribute("viewBox",`0,0,2000,1001`);
+            PrevWalkX = 0;
+            PrevWalkY = 0;
         }else{
             svg.style.width = num + '%';
             svg.style.height = num + '%';
@@ -66,9 +69,14 @@ function zoomOut(){
 function waitZoom(){
     outButton.addEventListener('click', () => {
         zoomOut();
+        
+
+        
     })
     inButton.addEventListener('click', () => {
         zoomIn();
+
+        
     })
 }
 
@@ -78,6 +86,7 @@ function waitPan(){
         svg.classList.add("move");
         startX = e.layerX;
         startY = e.layerY;
+        console.log(svg.getAttribute("viewBox"));
 
 
     });
@@ -92,20 +101,22 @@ function waitPan(){
     svg.addEventListener("mouseup",()=>{
         isDown = false;
         svg.classList.remove("move");
+        console.log(walkX);
+        console.log(walkY);
+        PrevWalkX += (-1)*walkX;
+        PrevWalkY += (-1)*walkY;
 
     });
 
     svg.addEventListener("mousemove",(e)=>{
         if(!isDown) return; //stop the fn from running
         e.preventDefault();
-        console.log(svg.getAttribute("viewBox"));
         const x =  e.layerX;
         const y = e.layerY;
         walkX = x - startX;
         walkY = y - startY;
-        svg.setAttribute("viewBox",`${(-1)*walkX},${(-1)*walkY},2000,1001`);
-
-
+        svg.setAttribute("viewBox",`${PrevWalkX + (-1)*walkX},${PrevWalkY + (-1)*walkY},2000,1001`);
+        
     });
 }
 
