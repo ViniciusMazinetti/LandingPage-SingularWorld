@@ -7,6 +7,10 @@ main #imagem .slider{
     flex-direction: row;
 }
 
+main #imagem{
+    position: relative;
+}
+
 main #imagem .slider .slide{
     height: 100vh;
     width: 100vw;
@@ -73,12 +77,13 @@ main #imagem .slide.active .pais{
 main #imagem .prev,
 main #imagem .next{
     position: absolute;
-    top: 172%;
+    top: 50%;
     z-index: 2;
     font-size: 3rem;
     color:white;
     padding: 10px;
-    transition: 1s;  
+    transition: 1s;
+    transform: translateY(-50%);  
 }
 
 main #imagem .next{
@@ -94,7 +99,7 @@ main #imagem .next:hover{
 
 main #imagem .indicator{
     position: absolute;
-    top:218%;
+    top: 95%;
     left: 50%;
     transform: translateX(-50%);
     

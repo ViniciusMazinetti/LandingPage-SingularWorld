@@ -1,6 +1,7 @@
 const svg = document.querySelector(".paises");
 const inButton = document.querySelector("#zoomIn");
 const outButton = document.querySelector("#zoomOut");
+const count = document.querySelector(".contador");
 
 let isDown = false;
 let startX;
@@ -134,7 +135,12 @@ function countCountry(){
             totalCountryVisited++;
         }
     }
+    showCountCountry(totalCountryVisited);
     console.log(totalCountryVisited);
+}
+
+function showCountCountry(totalCountryVisited){
+    count.innerHTML = "Country visited: \n" + totalCountryVisited; 
 }
 
 waitZoom();
