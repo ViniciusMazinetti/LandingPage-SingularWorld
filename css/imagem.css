@@ -1,3 +1,7 @@
+main #imagem{
+    position: relative;
+}
+
 main #imagem .slider{
     overflow-x: hidden;
     overflow-y: hidden;

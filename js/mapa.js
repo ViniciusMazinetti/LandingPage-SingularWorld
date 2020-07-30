@@ -11,6 +11,7 @@ let walkY = 0;
 let PrevWalkX = 0;
 let PrevWalkY = 0;
 let totalCountryVisited = 0;
+let countClick = 0;
 
 
 
@@ -121,11 +122,31 @@ function waitPan(){
 
 function clickCountry(){
     for(let i = 0;i<svg.children.length;i++){
-        svg.children[i].addEventListener("click",()=>{
-            svg.children[i].classList.toggle("active");
-            countCountry();
-        });
+        svg.children[i].setAttribute("onclick", "click(this)");
     }
+}
+
+function click(element){
+    countClick++;
+    if (countClick == 1){
+        setTimeout(()=>{
+            if(countClick == 1){
+                singleClick(element);
+            } else {
+                doubleClick(element);
+            }
+            countClick = 0;
+        },200);
+    }
+}
+
+function singleClick(element){
+    element.classList.toggle("active");
+    countCountry();
+}
+
+function doubleClick(element){
+    console.log(element.getAttribute("data-name"));
 }
 
 function countCountry(){
