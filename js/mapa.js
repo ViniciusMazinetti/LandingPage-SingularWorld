@@ -122,18 +122,18 @@ function waitPan(){
 
 function clickCountry(){
     for(let i = 0;i<svg.children.length;i++){
-        svg.children[i].setAttribute("onclick", "click(this)");
+        svg.children[i].addEventListener("click", this.click);
     }
 }
 
-function click(element){
+function click(event){
     countClick++;
     if (countClick == 1){
         setTimeout(()=>{
             if(countClick == 1){
-                singleClick(element);
+                singleClick(this);
             } else {
-                doubleClick(element);
+                doubleClick(this,event);
             }
             countClick = 0;
         },200);
@@ -145,7 +145,8 @@ function singleClick(element){
     countCountry();
 }
 
-function doubleClick(element){
+function doubleClick(element, event){
+    console.log(event.clientY);
     console.log(element.getAttribute("data-name"));
 }
 
@@ -163,6 +164,7 @@ function countCountry(){
 function showCountCountry(totalCountryVisited){
     count.innerHTML = "Country visited: \n" + totalCountryVisited; 
 }
+
 
 waitZoom();
 addLabel();
