@@ -94,10 +94,12 @@ main #mapa .popup .popup-header .close-button button{
 
 main #mapa .popup .popup-body{
     display: flex;
+    flex-grow: 1;
 }
 
 main #mapa .popup .popup-body .popup-flag,
-main #mapa .popup .popup-body .popup-content{  
+main #mapa .popup .popup-body .popup-content{ 
+    box-sizing: border-box; 
     min-width: 50%;
 }
 
@@ -109,17 +111,15 @@ main #mapa .popup .popup-body .popup-flag{
 }
 
 main #mapa .popup .popup-body .popup-content{
-    box-sizing: border-box;
+    box-sizing:content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 
 main #mapa .popup .popup-body .popup-content ul{
-    display: flex;
-    justify-content: baseline;
-    align-items: center;
-    flex-direction: column;
     padding: 5px;
-
 }
 
 main #mapa .popup .popup-body .popup-content ul{
