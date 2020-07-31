@@ -88,13 +88,11 @@ function waitPan(){
         startX = e.layerX;
         startY = e.layerY;
 
-
     });
 
     svg.addEventListener("mouseleave",()=>{
         isDown = false;
-        svg.classList.remove("move");
-        
+        svg.classList.remove("move"); 
 
     });
 
@@ -103,6 +101,8 @@ function waitPan(){
         svg.classList.remove("move");
         PrevWalkX += (-1)*walkX;
         PrevWalkY += (-1)*walkY;
+        walkX = 0;
+        walkY = 0;
 
     });
 
@@ -221,8 +221,8 @@ function updateInfo(element){
             }
         })}))
     .catch(error => {console.log('Deu erro: ' + e)});
- 
 }
+
 
 waitZoom();
 addLabel();
