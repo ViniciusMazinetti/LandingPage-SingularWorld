@@ -56,76 +56,90 @@ main #mapa .paises .pais.active{
     font-size: 2rem;
 }
 
-main #mapa .popup{
+main #mapa .popup.hide{
+    display: none;
+}
+
+main #mapa .popup.show{
     position: absolute;
     top:50%;
     left: 10%;
     z-index: 5;
     border: 1px solid black;
     border-radius: 5px;
-    min-width:15%;
+    min-width: 15%;
     min-height: 15%;
     display: flex;
     flex-direction: column;
-
+    box-sizing: border-box;
 }
 
 
-main #mapa .popup .popup-header{
+main #mapa .popup-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.8);
     padding: 0.3rem 0.2rem;
 }
 
-main #mapa .popup .popup-header a{
+main #mapa .popup-header a{
     text-decoration: none;
     color: white;
+    font-family: 'Special Elite', cursive;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.5s;
 }
 
-main #mapa .popup .popup-header .close-button button{
-    background: red;
+main #mapa .popup-header a:hover{
+    color: #74A1AD;
+}
+
+main #mapa .popup-header .close-button button{
+    background: none;
+    outline: none;
+    border: none;
     color: white;
     cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
+    font-size: 1.5rem;
 }
 
-main #mapa .popup .popup-body{
+main #mapa .popup-body{
     display: flex;
     flex-grow: 1;
+    background-color: rgba(116, 161, 173, 0.8);
 }
 
-main #mapa .popup .popup-body .popup-flag,
-main #mapa .popup .popup-body .popup-content{ 
-    box-sizing: border-box; 
-    min-width: 50%;
+main #mapa .popup-body .popup-flag,
+main #mapa .popup-body .popup-content{  
+    min-width: fit-content;
 }
 
-main #mapa .popup .popup-body .popup-flag{
+main #mapa .popup-body .popup-flag{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: salmon;
+    padding: 0 1rem;
 }
 
-main #mapa .popup .popup-body .popup-content{
-    box-sizing:content-box;
+main #mapa .popup-content{
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
 
-main #mapa .popup .popup-body .popup-content ul{
-    padding: 5px;
+main #mapa .popup-body .popup-content ul{
+    padding: 0.5rem 1.5rem;
 }
 
-main #mapa .popup .popup-body .popup-content ul{
+main #mapa .popup-body .popup-content ul{
     list-style-type:initial;
 }
 
-main #mapa .popup .popup-body .popup-content ul li{
-    align-content: flex-start;
+main #mapa .popup-body .popup-content ul li{
+    font-family: 'Special Elite', cursive;
+    font-size: 1rem;
+    color: black;
 }
