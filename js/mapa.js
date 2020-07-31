@@ -150,6 +150,8 @@ function doubleClick(element, event){
     popup.style.top = y + "px";
     popup.style.left = x +"px";
 
+    panPopup(x,y);
+
     updateTitle(element);
     updateFlag(element);
     waitClosePopup();
@@ -221,6 +223,53 @@ function updateInfo(element){
             }
         })}))
     .catch(error => {console.log('Deu erro: ' + e)});
+}
+
+let popupStartX = 0;
+let popupStartY = 0;
+let popupPrevWalkX = 0;
+let popupPrevWalkY = 0;
+let popupWalkX = 0;
+let popupWalkY = 0;
+
+function panPopup(){
+    let Yposition = 0;
+    let Xposition = 0;
+    popup.addEventListener("mousedown",(e)=>{
+        isDown = true;
+        popup.classList.add("move");
+        Yposition = popup.style.top;
+        Yposition = parseInt(Yposition.substr(0,Yposition.length-2));
+        Xposition = popup.style.left;
+        Xposition = parseInt(Xposition.substr(0,Xposition.length-2));
+        popupStartX = e.clientX;
+        popupStartY = e.clientY;
+    });
+
+    popup.addEventListener("mouseleave",()=>{
+        isDown = false;
+        popup.classList.remove("move"); 
+
+    });
+
+    popup.addEventListener("mouseup",()=>{
+        isDown = false;
+        popup.classList.remove("move");
+        popupWalkX = 0;
+        popupWalkY = 0;
+
+    });
+
+    popup.addEventListener("mousemove",(e)=>{
+        if(!isDown) return; //stop the fn from running
+        e.preventDefault();
+        let moveX =  e.clientX;
+        let moveY = e.clientY;
+        popupWalkX = moveX - popupStartX;
+        popupWalkY = moveY - popupStartY;
+        popup.style.top = Yposition + popupWalkY + "px";
+        popup.style.left = Xposition + popupWalkX + "px";
+    });
 }
 
 

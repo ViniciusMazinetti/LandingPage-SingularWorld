@@ -73,6 +73,10 @@ main #mapa .popup{
     box-sizing: border-box;
 }
 
+main #mapa .popup.move{
+    cursor: grabbing;
+}
+
 
 main #mapa .popup-header{
     display: flex;
