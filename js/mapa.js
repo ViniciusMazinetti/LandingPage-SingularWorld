@@ -1,4 +1,5 @@
 const svg = document.querySelector(".paises");
+const popup = document.querySelector(".popup");
 const inButton = document.querySelector("#zoomIn");
 const outButton = document.querySelector("#zoomOut");
 const count = document.querySelector(".contador");
@@ -73,13 +74,10 @@ function waitZoom(){
     outButton.addEventListener('click', () => {
         zoomOut();
         
-
-        
     })
     inButton.addEventListener('click', () => {
         zoomIn();
-
-        
+  
     })
 }
 
@@ -146,8 +144,14 @@ function singleClick(element){
 }
 
 function doubleClick(element, event){
-    console.log(event.clientY);
-    console.log(element.getAttribute("data-name"));
+    let x = event.clientX;
+    let y = event.clientY;
+    popup.classList.toggle("hide");
+    popup.style.top = y + "px";
+    popup.style.left = x +"px";
+
+    updateTitle(element);
+    updateFlag(element);
 }
 
 function countCountry(){
@@ -165,6 +169,19 @@ function showCountCountry(totalCountryVisited){
     count.innerHTML = "Country visited: \n" + totalCountryVisited; 
 }
 
+function updateTitle(element){
+    const title = popup.querySelector(".title a");
+    let countryName = element.getAttribute("data-name");
+    let linkGoogle = `https://www.google.com/search?q=${countryName}`;
+    title.textContent = countryName;
+    title.setAttribute("href",linkGoogle);
+}
+
+function updateFlag(element){
+    const flag = popup.querySelector(".popup-flag img");
+    let flagId = element.getAttribute("id");
+    flag.setAttribute("src",`https://www.countryflags.io/${flagId.toLowerCase()}/shiny/64.png`);  
+}
 
 waitZoom();
 addLabel();
