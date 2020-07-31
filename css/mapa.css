@@ -142,3 +142,7 @@ main #mapa .popup-body .popup-content ul li{
     font-size: 1rem;
     color: black;
 }
+
+main #mapa .popup-body .popup-content ul li span{
+    color:white;
+}

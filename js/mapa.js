@@ -153,6 +153,7 @@ function doubleClick(element, event){
     updateTitle(element);
     updateFlag(element);
     waitClosePopup();
+    updateInfo(element)
 }
 
 function countCountry(){
@@ -190,6 +191,37 @@ function waitClosePopup(){
         popup.classList.add('hide');
     })
 
+}
+
+function updateInfo(element){
+    const info = popup.querySelector(".popup-info");
+    const options = {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'default'
+    }
+    fetch('https://restcountries.eu/rest/v2/all',options)
+    .then((response => {response.json()
+        .then(data => {
+            let totalCurrencies = "";
+            let totalLanguages = "";
+            for (let i = 0; i < data.length; i++){
+                if (element.id == data[i].alpha2Code){
+                    info.querySelector(".capital").innerHTML= `Capital: <span>${data[i].capital}</span>`;
+                    info.querySelector(".region").innerHTML=`Region: <span>${data[i].region}</span>`;
+                    data[i].currencies.forEach((value)=>{
+                        totalCurrencies += value.name +", ";
+                    });
+                    info.querySelector(".currencies").innerHTML = "Currencies: " + `<span>${totalCurrencies.substr(0,totalCurrencies.length-2)}</span>`;
+                    data[i].languages.forEach((value)=>{
+                        totalLanguages += value.name+", ";
+                    });
+                    info.querySelector(".languages").innerHTML = "Languages: " + `<span>${totalLanguages.substr(0,totalLanguages.length-2)}</span>`;
+                }
+            }
+        })}))
+    .catch(error => {console.log('Deu erro: ' + e)});
+ 
 }
 
 waitZoom();
