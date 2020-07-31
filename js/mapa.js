@@ -152,6 +152,7 @@ function doubleClick(element, event){
 
     updateTitle(element);
     updateFlag(element);
+    waitClosePopup();
 }
 
 function countCountry(){
@@ -181,6 +182,14 @@ function updateFlag(element){
     const flag = popup.querySelector(".popup-flag img");
     let flagId = element.getAttribute("id");
     flag.setAttribute("src",`https://www.countryflags.io/${flagId.toLowerCase()}/shiny/64.png`);  
+}
+
+function waitClosePopup(){
+    const closeButton = document.querySelector(".close-button");
+    closeButton.addEventListener("click", () => {
+        popup.classList.add('hide');
+    })
+
 }
 
 waitZoom();
