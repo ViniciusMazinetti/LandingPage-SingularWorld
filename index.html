@@ -28,7 +28,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#imagem">Imagens</a></li>
                         <li><a href="#mapa">Mapa</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
                 <div class="icon">
@@ -1602,9 +1602,38 @@
                         </div>
                     </div>
                 </div>
-
             </section>
-
+            <section id="contato">
+                <div class="formulario">
+                    <div class="titulo"><h1>Contato</h1></div>
+                    <form>
+                        <div class="nome"><input type="text" name="nome" id="nome" placeholder="Nome Completo" required></div>
+                        <div class="email"><input type="email" name="email" id="email" placeholder="seu@email.com" required></div>
+                        <div class="estado"><select type="text" name="estado" id="estado" aria-placeholder="estado" required></div>
+                        <div class="cidade"><select type="text" name="cidade" id="cidade" aria-placeholder="cidade" disabled="true" required></div>
+                        <div class="mensagem"><textarea name="mensagem" id="mensagem" cols="30" rows="10" required></textarea></div>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+                <div class="integrantes">
+                    <div class="vinicius">
+                        <img src="img/img-vinicius.jpg" alt="Vinicius Desenvolvedor">
+                        <h1>Vinicius Mazinetti</h1>
+                        <div class="social-media">
+                            <a href="https://github.com/ViniciusMazinetti" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/vinicius-mazinetti-755159113/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="henrique">
+                        <img src="img/img_henrique.jpg" alt="Henrique Desenvolvedor">
+                        <h1>Henrique Akira</h1>
+                        <div class="social-media">
+                            <a href="https://github.com/HenriqueAkira" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/henrique-akira-yasuda-53a0a9129/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
     <script src="js/home.js"></script>

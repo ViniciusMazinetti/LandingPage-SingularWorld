@@ -1,0 +1,24 @@
+main #contato{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #contato .integrantes{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+main #contato .integrantes .vinicius img,
+main #contato .integrantes .henrique img{
+    width: 10px;
+    height: 10px;
+}
+
