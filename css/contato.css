@@ -3,22 +3,65 @@ main #contato{
     overflow-y: hidden;
     width: 100vw;
     height: 100vh;
+    background-image: url(../img/img-contato.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    position: relative;
+}
+
+main #contato .titulo{
+    position: absolute;
+    top: 5%;
+    font-size: 5rem;
+    color: black;
+    font-family: 'Special Elite', cursive;
+    
 }
 
 main #contato .integrantes{
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    text-align: center;
 
 }
+main #contato .integrantes .vinicius ,
+main #contato .integrantes .henrique {
+    box-sizing: border-box;
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 20vw;
+    height: 20vh;
+}
+
+main #contato .integrantes h1{
+    color: black;
+    font-size: 2rem;
+    font-family: 'Special Elite', cursive;
+}
+
+main #contato .integrantes figure{
+    filter: drop-shadow(-1px 6px 3px rgba(0,0,0,0.5));
+}
+
 main #contato .integrantes .vinicius img,
 main #contato .integrantes .henrique img{
-    width: 10px;
-    height: 10px;
+    object-fit: contain;
+    clip-path: circle();
+    margin: 0.5rem;
+    height: 100%;
+    width: 100%;
+}
+
+main #contato .integrantes .social-media i{
+    text-decoration: none;
+    font-size: 1rem;
+    color: black;
+
 }
 
