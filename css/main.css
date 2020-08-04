@@ -73,6 +73,23 @@ header .menu a{
     color:#C40001;
 }
 
+.rodape{
+    background-color: rgba(0,0,0, 0.7);
+    width: 100vw;
+    height: 30vh;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rodape p{
+    color: white;
+    font-size: 1rem;
+}
+
+
+
 
 
 

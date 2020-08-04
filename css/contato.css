@@ -16,16 +16,51 @@ main #contato{
 main #contato .titulo{
     position: absolute;
     top: 5%;
-    font-size: 5rem;
+    left: 10%;
+    font-size: 4rem;
     color: black;
-    font-family: 'Special Elite', cursive;
-    
+    font-family: 'Special Elite', cursive; 
+}
+
+main #contato .formulario{
+    height: 45vh;
+
+}
+
+main #contato .formulario form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: flex-start;  
+}
+
+main #contato .formulario form .local{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+}
+
+main #contato .formulario form input,
+main #contato .formulario form textarea,
+main #contato .formulario form select{
+    width: 100%;
+    border-color: transparent;
+    border-radius: 5px;
+    padding: 0.3rem;
+}
+
+main #contato .formulario form button{
+    width: 4rem;
+    height: 2rem;
 }
 
 main #contato .integrantes{
+    height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     text-align: center;
 
@@ -33,10 +68,7 @@ main #contato .integrantes{
 main #contato .integrantes .vinicius ,
 main #contato .integrantes .henrique {
     box-sizing: border-box;
-    margin: 1rem 0;
-    padding: 1rem;
-    width: 20vw;
-    height: 20vh;
+    margin-top: 2rem;
 }
 
 main #contato .integrantes h1{
@@ -53,15 +85,20 @@ main #contato .integrantes .vinicius img,
 main #contato .integrantes .henrique img{
     object-fit: contain;
     clip-path: circle();
-    margin: 0.5rem;
-    height: 100%;
-    width: 100%;
+    width: 30vw;
+    height: 30vh;
+    margin:0.5rem 0; 
 }
 
 main #contato .integrantes .social-media i{
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 2rem;
     color: black;
+    margin-left: 0.5rem;
+    transition: 0.5s;
+}
 
+main #contato .integrantes .social-media i:hover{
+    color: white;
 }
 

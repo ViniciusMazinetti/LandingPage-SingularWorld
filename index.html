@@ -1609,11 +1609,20 @@
                 
                 <div class="formulario">
                     <form>
-                        <div class="nome"><input type="text" name="nome" id="nome" placeholder="Nome Completo" required></div>
-                        <div class="email"><input type="email" name="email" id="email" placeholder="seu@email.com" required></div>
-                        <div class="estado"><select type="text" name="estado" id="estado" aria-placeholder="estado" required></div>
-                        <div class="cidade"><select type="text" name="cidade" id="cidade" aria-placeholder="cidade" disabled="true" required></div>
-                        <div class="mensagem"><textarea name="mensagem" id="mensagem" cols="30" rows="10" required></textarea></div>
+                        <input type="text" name="nome" id="nome" placeholder="Nome Completo" required>
+                        <input type="email" name="email" id="email" placeholder="seu@email.com" required>
+                        <div class="local"> 
+                            <select type="text" name="estado" id="estado"  required>
+                                <option>Estado</option>
+                                
+                            </select>
+                        
+                            <select type="text" name="cidade" id="cidade"  disabled = "true" required>
+                                <option>Cidade</option>
+                                
+                            </select>
+                        </div>
+                        <textarea name="mensagem" id="mensagem" cols="30" rows="10" required></textarea>
                         <button type="submit">Enviar</button>
                     </form>
                 </div>
@@ -1635,9 +1644,13 @@
                         </div>
                     </div>
                 </div>
-                
             </section>
         </main>
+        <footer class="rodape">
+            <figure><img src="img/logo.png" alt=""></figure>
+            <p>&copy; Direitos reservados para Singular World Company</p>
+        </footer>
+
     </div>
     <script src="js/home.js"></script>
     <script src="js/imagem.js"></script>
