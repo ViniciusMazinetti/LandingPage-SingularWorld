@@ -65,17 +65,9 @@
         font-size: 6px;
     }
 
-    .menu .categoria li a{
-        font-size:2rem;
-    }
-
     .menu .icon ul li a{
         font-size: 3rem;
     } 
-
-    .message{
-        font-size: 3rem;
-    }
 
     main #imagem .indicator div{
         line-height: 2.5rem;
@@ -106,4 +98,19 @@
         font-size: 3rem;
         margin-left: 1rem;
     }
+}
+
+@media (max-width:500px){
+    html{
+        font-size: 5px;
+    }
+
+    .menu .categoria li a{
+        font-size:2.5rem;
+    }
+
+    .message{
+        font-size: 3.5rem;
+    } 
+
 }
