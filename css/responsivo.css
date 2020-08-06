@@ -65,7 +65,15 @@
         font-size: 6px;
     }
 
+    .menu .categoria li a{
+        font-size:2rem;
+    }
+
     .menu .icon ul li a{
+        font-size: 3rem;
+    } 
+
+    .message{
         font-size: 3rem;
     }
 
