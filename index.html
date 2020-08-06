@@ -1613,17 +1613,17 @@
                         <input type="email" name="email" id="email" placeholder="seu@email.com" required>
                         <div class="local"> 
                             <select type="text" name="estado" id="estado"  required>
-                                <option>Estado</option>
+                                <option value="0">Estado</option>
                                 
                             </select>
                         
-                            <select type="text" name="cidade" id="cidade"  required>
+                            <select type="text" name="cidade" id="cidade" disabled required>
                                 <option>Cidade</option>
                                 
                             </select>
                         </div>
                         <textarea name="mensagem" id="mensagem" cols="30" rows="10" required></textarea>
-                        <button type="submit">Enviar</button>
+                        <button class="enviar">Enviar</button>
                     </form>
                 </div>
                 <div class="integrantes">
