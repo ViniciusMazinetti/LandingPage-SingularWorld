@@ -22,6 +22,11 @@ header .menu a{
     flex-grow: 0;
 }
 
+.menu .logo img{
+    width:15rem;
+    height: 10rem;
+}
+
 .menu .categoria{
     flex-grow: 4;
 }
@@ -76,16 +81,20 @@ header .menu a{
 .rodape{
     background-color: rgba(0,0,0, 0.7);
     width: 100vw;
-    height: 30vh;
     display:flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
 
+.rodape img{
+    width:15rem;
+    height: 10rem;
+}
 .rodape p{
     color: white;
     font-size: 1rem;
+    padding: 0.5rem;
 }
 
 

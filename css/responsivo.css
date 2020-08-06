@@ -1,0 +1,101 @@
+@media (max-width:1200px){
+    html{
+        font-size: 12px;
+    }
+}
+
+@media (max-width:965px){
+    html{
+        font-size: 10px;
+    }
+}
+
+@media (max-width:800px){
+    html{
+        font-size: 8px;
+    }
+
+    main #contato .titulo{
+        position: unset;
+    }
+
+    main #contato{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    main #contato .formulario form input,
+    main #contato .formulario form textarea{
+        width: 80vw;
+    }
+
+    main #contato .formulario form button{
+        width: 10rem;
+        height: 4rem;
+        font-size: 2rem;  
+    }
+
+    main #contato .integrantes{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: auto;
+        width: 100vw;
+    }
+
+    main #contato .integrantes .vinicius ,
+    main #contato .integrantes .henrique {
+        margin-top: 0;
+    }
+
+    main #contato .integrantes .vinicius img,
+    main #contato .integrantes .henrique img{
+        width: 20vw;
+        height: 20vh;
+        margin:0.5rem 0; 
+    }
+
+
+}
+
+@media (max-width:640px){
+    html{
+        font-size: 6px;
+    }
+
+    .menu .icon ul li a{
+        font-size: 3rem;
+    }
+
+    main #imagem .indicator div{
+        line-height: 2.5rem;
+        width:2rem;
+        height: 2rem;
+        font-size: 2rem;
+          
+    }
+
+    main #mapa #zoomOut,
+    main #mapa #zoomIn{
+        width: 4rem;
+        height: 4rem;
+        font-size: 2.5rem;
+        margin: 1rem 2rem;
+    }
+
+    .contador {
+        margin-left:2rem;
+        font-size: 4rem;
+    }
+
+    main #contato .integrantes h1{
+        font-size: 3rem;
+    }
+
+    main #contato .integrantes .social-media i{
+        font-size: 3rem;
+        margin-left: 1rem;
+    }
+}
